@@ -18,7 +18,7 @@ const candyColors = [
 ]
 
 function App() {
-  const [currentCandies, setCurrentCandies] = useState([]);
+  const [currentCandies, setCurrentCandies] = useState<string[]>([]);
   const [draggedItem, setDraggedItem] = useState(null)
   const [replacedItem, setReplacedItem] = useState(null)
 
@@ -141,9 +141,9 @@ function App() {
 
 
   const createBoard = () => {
-    const randomCandies = [];
+    const randomCandies: string[] = []: void;
     for (let i = 0; i < WIDTH * WIDTH; i++) {
-      const randomColor = candyColors[Math.floor(Math.random() * candyColors.length)];
+      const randomColor: string = candyColors[Math.floor(Math.random() * candyColors.length)];
       randomCandies.push(randomColor)
     }
     setCurrentCandies(randomCandies)
